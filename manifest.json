@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Look Away Now",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.nfl.com/*"],
+      "css": ["styles.css"]
+    }
+  ]
+}
