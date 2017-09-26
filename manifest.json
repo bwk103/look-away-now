@@ -3,14 +3,31 @@
   "name": "Look Away Now",
   "version": "1.0",
   "description": "Hides the final scores on NFL.com",
-  "icons": {
-            "16": "icons8-Sport_16.png",
-            "48": "icons8-Sport_48.png"},
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "page_action":
+  {
+    "default_icon": "./images/icons8-Sport_16.png",
+    "default_title": "Look Away Now"
+  },
+
+  "permissions": [
+    "declarativeContent",
+    "activeTab"
+  ],
 
   "content_scripts": [
     {
-      "matches": ["https://www.nfl.com/*"],
-      "css": ["styles.css"]
+      "matches": ["*://*.nfl.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
     }
-  ]
+  ],
+
+  "icons": {
+    "48": "./images/icons8-Sport_48.png"
+  }
 }
